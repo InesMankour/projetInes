@@ -1,5 +1,3 @@
-package scala
-
 import org.scalatest._
 import data.Country
 import data.Runway
@@ -26,8 +24,8 @@ class test extends FlatSpec with Matchers {
   "countryToCode" should "censée retourner le code du pays à partir du nom " in {
   val country = Country("302618","AE","United Arab Emirates","AS","http://en.wikipedia.org/wiki/United_Arab_Emirates","UAE")
   val country2 = Country("302687","FR","France","EU","http://en.wikipedia.org/wiki/France","")
-  Functions.countryToCode("United Arab Emirates",List(country),15) should be("AE")
-  Functions.countryToCode("France",List(country2),15) should be("FR")
+  Functions.getCodeFromName("United Arab Emirates",List(country)) should be("AE")
+  Functions.getCodeFromName("France",List(country2)) should be("FR")
 
 
   }
