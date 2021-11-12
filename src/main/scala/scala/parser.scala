@@ -2,6 +2,7 @@
 package scala
 object Parser
 {
+    // takes input data (frequently text) and builds a data structure
     // Chemin pour les csv
     val sourcesPath = "./src/main/scala/resources/"
 
@@ -21,7 +22,7 @@ object Parser
       def csv_to_list2(lines: List[String], acc: List[Any] = Nil): List[Any] = lines match
       {
         case (Nil)     => acc
-        case (head::tail) => val anyObject = Utils.toAny(types, head);
+        case (head::tail) => val anyObject = Functions.toAny(types, head);
                           csv_to_list2(tail, anyObject::acc)
       }
       types match
